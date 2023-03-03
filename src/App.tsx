@@ -1,11 +1,16 @@
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {Text} from 'react-native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {MainPage} from '@src/pages/MainPage';
+
+const Stack = createNativeStackNavigator();
 
 export function App(): JSX.Element {
   return (
     <NavigationContainer>
-      <Text>Hello World</Text>
+      <Stack.Navigator initialRouteName="Main">
+        <Stack.Screen name="Main" component={MainPage} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
