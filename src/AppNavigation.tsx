@@ -17,34 +17,45 @@ export function AppNavigation(): JSX.Element {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName={RouteName.MainPage}>
-        <Stack.Screen name={RouteName.MainPage} component={MainPage} />
+        <Stack.Screen
+          name={RouteName.MainPage}
+          component={MainPage}
+          options={{title: 'Main'}}
+        />
         <Stack.Screen
           name={RouteName.CssFlexboxFlexDirectionPage}
           component={CssFlexboxFlexDirectionPage}
+          options={{title: 'Flex Direction'}}
         />
         <Stack.Screen
           name={RouteName.CssFlexboxJustifyContentPage}
           component={CssFlexboxJustifyContentPage}
+          options={{title: 'Justify Content'}}
         />
         <Stack.Screen
           name={RouteName.CssFlexboxAlignItemsPage}
           component={CssFlexboxAlignItemsPage}
+          options={{title: 'Align Items'}}
         />
         <Stack.Screen
           name={RouteName.CssFlexboxAlignSelfPage}
           component={CssFlexboxAlignSelfPage}
+          options={{title: 'Align Self'}}
         />
         <Stack.Screen
           name={RouteName.CssFlexboxAlignContentPage}
           component={CssFlexboxAlignContentPage}
+          options={{title: 'Align Content'}}
         />
         <Stack.Screen
           name={RouteName.CssFlexboxFlexWrapPage}
           component={CssFlexboxFlexWrapPage}
+          options={{title: 'Flex Wrap'}}
         />
         <Stack.Screen
           name={RouteName.CssFlexboxFlexPage}
           component={CssFlexboxFlexPage}
+          options={{title: 'Flex'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

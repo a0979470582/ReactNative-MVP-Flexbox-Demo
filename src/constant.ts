@@ -1,12 +1,12 @@
 export enum RouteName {
-  MainPage = 'mainPage',
-  CssFlexboxFlexDirectionPage = 'cssFlexboxFlexDirectionPage',
-  CssFlexboxJustifyContentPage = 'cssFlexboxJustifyContentPage',
-  CssFlexboxAlignItemsPage = 'cssFlexboxAlignItemsPage',
-  CssFlexboxAlignSelfPage = 'cssFlexboxAlignSelfPage',
-  CssFlexboxAlignContentPage = 'cssFlexboxAlignContentPage',
-  CssFlexboxFlexWrapPage = 'cssFlexboxFlexWrapPage',
-  CssFlexboxFlexPage = 'cssFlexboxFlexPage',
+  MainPage = 'MainPage',
+  CssFlexboxFlexDirectionPage = 'CssFlexboxFlexDirectionPage',
+  CssFlexboxJustifyContentPage = 'CssFlexboxJustifyContentPage',
+  CssFlexboxAlignItemsPage = 'CssFlexboxAlignItemsPage',
+  CssFlexboxAlignSelfPage = 'CssFlexboxAlignSelfPage',
+  CssFlexboxAlignContentPage = 'CssFlexboxAlignContentPage',
+  CssFlexboxFlexWrapPage = 'CssFlexboxFlexWrapPage',
+  CssFlexboxFlexPage = 'CssFlexboxFlexPage',
 }
 
 export type AppPageParamsList = {
