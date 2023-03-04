@@ -1,6 +1,7 @@
 import React from 'react';
 import {Box, BoxProps} from '@src/components/Box/Box';
 import {colors} from '@src/styles/colors';
+import {ViewStyle} from 'react-native';
 
 export enum BoxType {
   Type1,
@@ -22,8 +23,12 @@ const BoxConfig = {
   [BoxType.Type7]: {name: '7', colorRgb: colors.indigo_500},
 };
 
-export function BoxFactory({boxType}: {boxType: BoxType}): JSX.Element {
+interface BoxFactoryProps {
+  boxType: BoxType;
+  style?: ViewStyle;
+}
+export function BoxFactory({boxType, style}: BoxFactoryProps): JSX.Element {
   const boxProps: BoxProps = BoxConfig[boxType];
 
-  return <Box {...boxProps} />;
+  return <Box {...boxProps} style={style} />;
 }
