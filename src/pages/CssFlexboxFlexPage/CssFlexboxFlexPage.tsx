@@ -72,7 +72,6 @@ const styles = StyleSheet.create({
     margin: 16,
     flex: 1,
     maxHeight: '50%',
-    flexWrap: 'wrap',
     borderRadius: 12,
     borderWidth: 8,
     borderColor: colors.pink_100,
