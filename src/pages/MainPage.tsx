@@ -1,16 +1,18 @@
+import {NavigationProp, useNavigation} from '@react-navigation/native';
+import {RouteName, AppPageParamsList} from '@src/App';
 import {colors} from '@src/styles/colors';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import {Text} from 'react-native';
 
-const ITEM_TEXTS: Array<string> = [
-  'flex-direction',
-  'justify-content',
-  'align-items',
-  'align-self',
-  'align-content',
-  'flex-wrap',
-  'flex',
+const ITEMS = [
+  {routeName: RouteName.CssFlexboxFlexDirectionPage, name: 'flex-direction'},
+  {routeName: RouteName.CssFlexboxJustifyContentPage, name: 'justify-content'},
+  {routeName: RouteName.CssFlexboxAlignItemsPage, name: 'align-items'},
+  {routeName: RouteName.CssFlexboxAlignSelfPage, name: 'align-self'},
+  {routeName: RouteName.CssFlexboxAlignContentPage, name: 'align-content'},
+  {routeName: RouteName.CssFlexboxFlexWrapPage, name: 'flex-wrap'},
+  {routeName: RouteName.CssFlexboxFlexPage, name: 'flex'},
 ];
 
 export function MainPage(): JSX.Element {
@@ -23,20 +25,31 @@ export function MainPage(): JSX.Element {
 }
 
 function ItemList(): JSX.Element {
+  const navigation = useNavigation<NavigationProp<AppPageParamsList>>();
   return (
     <View style={styles.listContainer}>
-      {ITEM_TEXTS.map(itemText => (
-        <Item key={itemText} itemText={itemText} />
+      {ITEMS.map(({routeName, name}) => (
+        <Item
+          key={routeName}
+          itemText={name}
+          onPress={() => {
+            navigation.navigate(routeName);
+          }}
+        />
       ))}
     </View>
   );
 }
 
-function Item({itemText}: {itemText: string}): JSX.Element {
+interface ItemProps {
+  itemText: string;
+  onPress: () => void;
+}
+function Item({itemText, onPress}: ItemProps): JSX.Element {
   return (
-    <View style={styles.listItem}>
+    <TouchableOpacity style={styles.listItem} onPress={onPress}>
       <Text style={styles.itemText}>{itemText}</Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 
