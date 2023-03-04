@@ -10,7 +10,7 @@ interface BoxState {
 }
 
 export function useBoxState(): BoxState {
-  const [flexGrow, setFlexGrow] = useState(1);
+  const [flexGrow, setFlexGrow] = useState(0);
   const [flexShrink, setFlexShrink] = useState(0);
   const [flexBasis, setFlexBasis] = useState(50);
 

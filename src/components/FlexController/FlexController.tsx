@@ -30,7 +30,7 @@ export function FlexController({
         <SimpleSlider
           value={flexBasis}
           onValueChange={setFlexBasis}
-          maximumValue={150}
+          maximumValue={250}
         />
         <Text style={styles.sliderTitleText}>{`Flex Grow (${flexGrow})`}</Text>
         <SimpleSlider

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, BoxProps} from '@src/components/Box/Box';
 import {colors} from '@src/styles/colors';
-import {ViewStyle} from 'react-native';
+import {LayoutChangeEvent, ViewStyle} from 'react-native';
 
 export enum BoxType {
   Type1,
@@ -26,9 +26,14 @@ const BoxConfig = {
 interface BoxFactoryProps {
   boxType: BoxType;
   style?: ViewStyle;
+  onLayout?: (event: LayoutChangeEvent) => void;
 }
-export function BoxFactory({boxType, style}: BoxFactoryProps): JSX.Element {
+export function BoxFactory({
+  boxType,
+  style,
+  onLayout,
+}: BoxFactoryProps): JSX.Element {
   const boxProps: BoxProps = BoxConfig[boxType];
 
-  return <Box {...boxProps} style={style} />;
+  return <Box {...boxProps} style={style} onLayout={onLayout} />;
 }

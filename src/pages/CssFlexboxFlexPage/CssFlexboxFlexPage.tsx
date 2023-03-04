@@ -1,11 +1,26 @@
 import {BoxFactory, BoxType} from '@src/components/Box/BoxFactory';
-import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import React, {useState} from 'react';
+import {LayoutChangeEvent, StyleSheet, View} from 'react-native';
 import {colors} from '@src/styles/colors';
 import {FlexController} from '@src/components/FlexController/FlexController';
 import {useBoxState} from '@src/pages/CssFlexboxFlexPage/useBoxState';
+import {BoxesHeightDashboard} from '@src/pages/CssFlexboxFlexPage/BoxesHeightDashboard';
 
 export function CssFlexboxFlexPage(): JSX.Element {
+  const [boxContainerHeight, setBoxContainerHeight] = useState(0);
+  const onLayoutBoxContainer = (event: LayoutChangeEvent) => {
+    setBoxContainerHeight(event.nativeEvent.layout.height);
+  };
+  const [box1Height, setBox1Height] = useState(0);
+  const onLayoutBox1 = (event: LayoutChangeEvent) => {
+    setBox1Height(event.nativeEvent.layout.height);
+  };
+
+  const [box2Height, setBox2Height] = useState(0);
+  const onLayoutBox2 = (event: LayoutChangeEvent) => {
+    setBox2Height(event.nativeEvent.layout.height);
+  };
+
   const box1State = useBoxState();
   const box2State = useBoxState();
 
@@ -23,9 +38,22 @@ export function CssFlexboxFlexPage(): JSX.Element {
 
   return (
     <View style={styles.container}>
-      <View style={[styles.boxesContainer]}>
-        <BoxFactory boxType={BoxType.Type1} style={box1Style} />
-        <BoxFactory boxType={BoxType.Type2} style={box2Style} />
+      <View style={[styles.boxesContainer]} onLayout={onLayoutBoxContainer}>
+        <BoxFactory
+          boxType={BoxType.Type1}
+          style={box1Style}
+          onLayout={onLayoutBox1}
+        />
+        <BoxFactory
+          boxType={BoxType.Type2}
+          style={box2Style}
+          onLayout={onLayoutBox2}
+        />
+        <BoxesHeightDashboard
+          heightBox1={box1Height}
+          heightBox2={box2Height}
+          heightContainer={boxContainerHeight}
+        />
       </View>
       <View style={styles.flexControllerContainer}>
         <FlexController {...box1State} name="Box1" />
