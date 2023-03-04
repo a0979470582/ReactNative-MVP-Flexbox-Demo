@@ -1,5 +1,5 @@
 import {NavigationProp, useNavigation} from '@react-navigation/native';
-import {RouteName, AppPageParamsList} from '@src/App';
+import {RouteName, AppPageParamsList} from '@src/constant';
 import {colors} from '@src/styles/colors';
 import React from 'react';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
