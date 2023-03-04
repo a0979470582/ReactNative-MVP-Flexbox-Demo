@@ -12,6 +12,7 @@ export function RadioButtons({index, setIndex, titles}: Props): JSX.Element {
     <View>
       {titles.map((title, i) => (
         <RadioButton
+          key={title}
           checked={i === index}
           onPress={() => setIndex(i)}
           title={title}
