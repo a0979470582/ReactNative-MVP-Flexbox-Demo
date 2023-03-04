@@ -1,8 +1,9 @@
 import {BoxFactory, BoxType} from '@src/components/Box/BoxFactory';
-import React, {useState} from 'react';
+import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors} from '@src/styles/colors';
 import {FlexController} from '@src/components/FlexController/FlexController';
+import {useBoxState} from '@src/pages/CssFlexboxFlexPage/useBoxState';
 
 export function CssFlexboxFlexPage(): JSX.Element {
   const box1State = useBoxState();
@@ -32,30 +33,6 @@ export function CssFlexboxFlexPage(): JSX.Element {
       </View>
     </View>
   );
-}
-
-interface BoxState {
-  flexGrow: number;
-  setFlexGrow: (value: number) => void;
-  flexShrink: number;
-  setFlexShrink: (value: number) => void;
-  flexBasis: number;
-  setFlexBasis: (value: number) => void;
-}
-
-function useBoxState(): BoxState {
-  const [flexGrow, setFlexGrow] = useState(1);
-  const [flexShrink, setFlexShrink] = useState(0);
-  const [flexBasis, setFlexBasis] = useState(50);
-
-  return {
-    flexGrow,
-    setFlexGrow,
-    flexShrink,
-    setFlexShrink,
-    flexBasis,
-    setFlexBasis,
-  };
 }
 
 const styles = StyleSheet.create({

@@ -6,7 +6,7 @@ import {CssFlexboxFlexDirectionPage} from '@src/pages/CssFlexboxFlexDirectionPag
 import {CssFlexboxAlignContentPage} from '@src/pages/CssFlexboxAlignContentPage';
 import {CssFlexboxAlignItemsPage} from '@src/pages/CssFlexboxAlignItemsPage';
 import {CssFlexboxAlignSelfPage} from '@src/pages/CssFlexboxAlignSelfPage';
-import {CssFlexboxFlexPage} from '@src/pages/CssFlexboxFlexPage';
+import {CssFlexboxFlexPage} from '@src/pages/CssFlexboxFlexPage/CssFlexboxFlexPage';
 import {CssFlexboxFlexWrapPage} from '@src/pages/CssFlexboxFlexWrapPage';
 import {CssFlexboxJustifyContentPage} from '@src/pages/CssFlexboxJustifyContentPage';
 import {RouteName} from '@src/constant';
