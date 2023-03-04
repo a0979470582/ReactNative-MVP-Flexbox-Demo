@@ -4,7 +4,7 @@ import {StyleSheet, View, FlexStyle} from 'react-native';
 import {colors} from '@src/styles/colors';
 import {RadioButtons} from '@src/components/RadioButton/RadioButtons';
 
-const JustifyContents = [
+const Datas = [
   'flex-start',
   'flex-end',
   'center',
@@ -15,11 +15,11 @@ const JustifyContents = [
 
 export function CssFlexboxJustifyContentPage(): JSX.Element {
   const [index, setIndex] = useState(0);
-  const justifyContent = JustifyContents[index] as FlexStyle['justifyContent'];
+  const data = Datas[index] as FlexStyle['justifyContent'];
 
   return (
     <View style={styles.container}>
-      <View style={[styles.boxesContainer, {justifyContent}]}>
+      <View style={[styles.boxesContainer, {justifyContent: data}]}>
         <BoxFactory boxType={BoxType.Type1} />
         <BoxFactory boxType={BoxType.Type2} />
         <BoxFactory boxType={BoxType.Type3} />
@@ -28,11 +28,7 @@ export function CssFlexboxJustifyContentPage(): JSX.Element {
         <BoxFactory boxType={BoxType.Type6} />
         <BoxFactory boxType={BoxType.Type7} />
       </View>
-      <RadioButtons
-        titles={JustifyContents}
-        index={index}
-        setIndex={setIndex}
-      />
+      <RadioButtons titles={Datas} index={index} setIndex={setIndex} />
     </View>
   );
 }

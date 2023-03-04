@@ -4,15 +4,15 @@ import {StyleSheet, View, FlexStyle} from 'react-native';
 import {colors} from '@src/styles/colors';
 import {RadioButtons} from '@src/components/RadioButton/RadioButtons';
 
-const FlexDirections = ['row', 'row-reverse', 'column', 'column-reverse'];
+const Datas = ['row', 'row-reverse', 'column', 'column-reverse'];
 
 export function CssFlexboxFlexDirectionPage(): JSX.Element {
   const [index, setIndex] = useState(0);
-  const flexDirection = FlexDirections[index] as FlexStyle['flexDirection'];
+  const data = Datas[index] as FlexStyle['flexDirection'];
 
   return (
     <View style={styles.container}>
-      <View style={[styles.boxesContainer, {flexDirection}]}>
+      <View style={[styles.boxesContainer, {flexDirection: data}]}>
         <BoxFactory boxType={BoxType.Type1} />
         <BoxFactory boxType={BoxType.Type2} />
         <BoxFactory boxType={BoxType.Type3} />
@@ -21,7 +21,7 @@ export function CssFlexboxFlexDirectionPage(): JSX.Element {
         <BoxFactory boxType={BoxType.Type6} />
         <BoxFactory boxType={BoxType.Type7} />
       </View>
-      <RadioButtons titles={FlexDirections} index={index} setIndex={setIndex} />
+      <RadioButtons titles={Datas} index={index} setIndex={setIndex} />
     </View>
   );
 }

@@ -4,20 +4,20 @@ import {StyleSheet, View, FlexStyle} from 'react-native';
 import {colors} from '@src/styles/colors';
 import {RadioButtons} from '@src/components/RadioButton/RadioButtons';
 
-const AlignItems = ['flex-start', 'flex-end', 'center', 'stretch', 'baseline'];
+const Datas = ['flex-start', 'flex-end', 'center', 'stretch', 'baseline'];
 
 export function CssFlexboxAlignItemsPage(): JSX.Element {
   const [index, setIndex] = useState(0);
-  const alignItem = AlignItems[index] as FlexStyle['alignItems'];
+  const data = Datas[index] as FlexStyle['alignItems'];
 
   return (
     <View style={styles.container}>
-      <View style={[styles.boxesContainer, {alignItems: alignItem}]}>
+      <View style={[styles.boxesContainer, {alignItems: data}]}>
         <BoxFactory boxType={BoxType.Type1} />
         <BoxFactory boxType={BoxType.Type2} />
         <BoxFactory boxType={BoxType.Type3} />
       </View>
-      <RadioButtons titles={AlignItems} index={index} setIndex={setIndex} />
+      <RadioButtons titles={Datas} index={index} setIndex={setIndex} />
     </View>
   );
 }
